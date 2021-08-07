@@ -27,6 +27,14 @@ app.post('/users', async (req, res) => {
 })
 
 app.patch('/users/:id', async (req, res) => {
+    const updates = Object.keys(req.body)
+    const allowedUpdates = ['name', 'age', 'password']
+    const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
+
+    if (!isValidOperation) {
+        return res.status(400).send("Invalid update!")
+    }
+
     try {
         const user = await User.findByIdAndUpdate(req.params.id, req.body, {
             new: true,
