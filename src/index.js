@@ -31,3 +31,15 @@ const bcrypt = require('bcryptjs')
 // }
 
 // myFunction()
+
+// const jwt = require('jsonwebtoken')
+
+// const myFunction = async () => {
+//     const token = jwt.sign({_id: 'abbcas'}, 'thisismynewproject', { expiresIn: '7 days' })
+//     console.log(token)
+
+//     const data = jwt.verify(token, 'thisismynewproject')
+//     console.log(data)
+// }
+
+// myFunction()
