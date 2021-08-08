@@ -8,6 +8,15 @@ const taskRouter = require('./routers/task')
 const app = express()
 const PORT = process.env.PORT || 3000
 
+// //Express middleware 
+// app.use((req, res, next) => {
+//     if (req.method === 'GET') {
+//         res.send('GET requests are disabled')
+//     } else {
+//         next()
+//     }
+// })
+
 app.use(express.json())
 app.use(userRouter)
 app.use(taskRouter)
